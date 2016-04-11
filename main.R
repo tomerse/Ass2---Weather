@@ -61,6 +61,13 @@ boxplot(Average_Temperature ~ by_the_sea, data = cities , col="red", main="By Th
 #with(subset(cities, North == 0), plot(longitude, Average_Temperature, main = "South"))
 #with(subset(cities, North == 1), plot(longitude, Average_Temperature, main = "North"))
 
+for (i in 1:numOfCities){
+  if (cities$North[i]==0)
+    cities$North[i] <- "red"
+  else
+    cities$North[i] <- "blue"
+}
+
 #one chart to compare
 with(cities, plot(longitude,Average_Temperature,col=North))
 
@@ -68,3 +75,5 @@ dev.off()
 map <- get_map(location = c(lon = mean(cities$longitude), lat = mean(cities$latitude)), zoom = 4, maptype = "satellite", scale = 2)
 # plotting the map with some points on it
 ggmap(map)+geom_point(data=cities,aes(x=longitude, y=latitude, colour = Average_Temperature), size = 2) + scale_color_gradient(high ="red",low="blue")
+
+
