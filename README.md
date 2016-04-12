@@ -1,7 +1,7 @@
 ---
-title: "Ass2 - US Weather"   
+title: "Ass2--US Temperatures in January 2016"   
 author: "Tomer Belzer & Tomer Segal"   
-date: "April 11, 2016"   
+date: "April 12, 2016"   
 output: html_document
 ---
 
